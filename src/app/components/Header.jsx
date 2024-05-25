@@ -1,11 +1,10 @@
-import React from "react";
 import styles from "../styles/header.module.css";
 import Link from "next/link";
 import { IoSearchOutline } from "react-icons/io5";
 import { MdPermIdentity } from "react-icons/md";
 import { HiOutlineBookmark } from "react-icons/hi2";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
-
+import MenuDrawer from "./Drawer";
 const Header = () => {
   return (
     <>
@@ -20,6 +19,7 @@ const Header = () => {
           <HiOutlineBookmark />
           <HiOutlineShoppingBag />
         </div>
+        <MenuDrawer />
       </div>
       <div className={styles.link}>
         <Link href="/">Bags</Link>
