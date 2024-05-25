@@ -1,0 +1,27 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"); */
+.name {
+  display: flex;
+  gap: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 2rem;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+.icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.3rem;
+}
+.link {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.link a {
+  text-decoration: none;
+}
