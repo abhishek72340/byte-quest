@@ -1,9 +1,9 @@
-.category{
-    display: flex;
-    gap: 3rem;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 4%;
-    flex-wrap: wrap;
+.category {
+  display: flex;
+  gap: 3rem;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4%;
+  flex-wrap: wrap;
 }

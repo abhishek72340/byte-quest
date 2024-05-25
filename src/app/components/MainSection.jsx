@@ -1,38 +1,30 @@
-"use client";
-import React, { useEffect, useState } from "react";
 import styles from "../styles/main.module.css";
+import Image from "next/image";
 import { IoBagAddOutline } from "react-icons/io5";
 import { CiBookmark } from "react-icons/ci";
+import axios from "axios";
 
+// title limit word function
 const truncateTitle = (title, wordLimit) => {
   if (!title) return "";
   const words = title.split(" ");
   return words.slice(0, wordLimit).join(" ");
 };
-const MainSection = () => {
-  const [data, setData] = useState([]);
 
-  const getData = async () => {
-    try {
-      const res = await fetch("https://fakestoreapi.com/products");
-      const data = await res.json();
-      setData(data);
-      console.log(data);
-    } catch (error) {
-      throw new Error("error:", error);
-    }
-  };
+const fetchData = async () => {
+  const res = await axios("https://fakestoreapi.com/products");
+  return res.data ?? [];
+};
+const MainSection = async () => {
+  const getData = await fetchData();
 
-  useEffect(() => {
-    getData();
-  }, []);
   return (
     <div className={styles.mainSection}>
-      {data?.map((item) => {
+      {getData?.map((item) => {
         return (
           <div key={item.id} className={styles.card}>
             <CiBookmark className={styles.bookmark} />
-            <img src={item?.image} alt="image" />
+            <Image src={item?.image} alt="image" width={100} height={100} />
             <div className={styles.detail}>
               <p>{truncateTitle(item?.title, 4)}</p>
               <div className={styles.price_container}>
